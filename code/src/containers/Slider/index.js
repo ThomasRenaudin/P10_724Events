@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react";
 import { useData } from "../../contexts/DataContext"; // Récupère les données de events.json
-import { getMonth, getYear } from "../../helpers/Date"; // Permet de renvoyer les noms des mois
+import { getMonth} from "../../helpers/Date"; // Permet de renvoyer les noms des mois
 
 import "./style.scss";
 
