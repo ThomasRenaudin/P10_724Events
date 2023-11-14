@@ -75,6 +75,7 @@ const filteredEvents = (
               console.log("La valeur est injectée :", value);
             }}
           />
+        
           {/* Affichage des évènements */}
           <div id="events" className="ListContainer">
             {/* Attribution d'un EventCard a chacun des éléments de filteredEvents */}
@@ -92,6 +93,7 @@ const filteredEvents = (
               </Modal>
             ))}
           </div>
+        
           {/* Pagination */}
           <div className="Pagination">
             {[...Array(pageNumber || 0)].map((_, n) => (

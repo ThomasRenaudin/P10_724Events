@@ -13,16 +13,22 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const { data } = useData();
+  console.log("Data from useData():", data);
+  const last =
+  data && data.events && data.events.length > 0 // Vérifie que data existe
+    ? data.events[0] // Récupére la dernière valeur de data
+    : null; // Sinon renvoie null
   return <>
     <header>
       <Menu />
     </header>
+    {/* Modifications des id du main pour la redirection */}
     <main>
       <section className="SliderContainer">
-        <Slider />
+        <Slider key="1" />
       </section>
-      <section className="ServicesContainer">
+      <section id="nos-services"  className="ServicesContainer">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -51,11 +57,11 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
-      <section className="EventsContainer">
+      <section  id="nos-realisations" className="EventsContainer">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer">
+      <section id="notre-equipe" className="PeoplesContainer">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -115,13 +121,17 @@ const Page = () => {
     </main>
     <footer className="row">
       <div className="col presta">
-        <h3>Notre derniére prestation</h3>
+        <h3>Notre dernière prestation</h3>
+        {console.log("last:", last)}
+        {console.log("cover:", last?.cover)}
+        {console.log("title:", last?.title)}
+        {console.log("date:", last?.date)}
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}
           date={new Date(last?.date)}
           small
-          label="boom"
+          label={last?.type} // Ajout du type d'evt
         />
       </div>
       <div className="col contact">
