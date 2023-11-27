@@ -23,8 +23,8 @@ const Select = ({
   const changeValue = (newValue) => {
     onChange(newValue); // Appel de la fonction de changement
     setValue(newValue); // Mise a jour de la valeur
-    setCollapsed(newValue); // Fermeture du menu déroulant
-    console.log("La valeur retournée par onChange de Select : ", newValue);
+    setCollapsed(true); // Fermeture du menu déroulant ajout de true sur le all 
+    // console.log("La valeur retournée par onChange de Select : ", newValue);
   };
 
   return (

@@ -14,7 +14,7 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const { data } = useData();
-  console.log("Data from useData():", data);
+  // console.log("Data from useData():", data);
   const last =
   data && data.events && data.events.length > 0 // Vérifie que data existe
     ? data.events[0] // Récupére la dernière valeur de data
@@ -122,10 +122,6 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre dernière prestation</h3>
-        {console.log("last:", last)}
-        {console.log("cover:", last?.cover)}
-        {console.log("title:", last?.title)}
-        {console.log("date:", last?.date)}
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}

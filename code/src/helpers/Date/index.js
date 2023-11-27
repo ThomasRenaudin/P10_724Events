@@ -18,5 +18,3 @@ export const MONTHS = {
 
 export const getMonth = (date) => MONTHS[date.getMonth()];
 
-// Fonction pour obtenir l'année à partir d'une date
-export const getYear = (date) => date.getFullYear();

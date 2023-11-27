@@ -46,10 +46,10 @@ const filteredEvents = (
 
 // Fonction de mise à jour du type d'évenement affiché
   const changeType = (evtType) => {
-    console.log("Le changement de valeur vient de passer dans la fonction changeType");
+    // console.log("Le changement de valeur vient de passer dans la fonction changeType");
     setCurrentPage(1);
     setType(evtType);
-    console.log("Liste des événements après changement du type :", filteredEvents);
+    // console.log("Liste des événements après changement du type :", filteredEvents);
   };
 
 // Calcul du nombre de pages nécessaires pour afficher tous les évenements
@@ -72,7 +72,7 @@ const filteredEvents = (
             selection={Array.from(typeList)}
             onChange={(value) => {
               changeType(value);
-              console.log("La valeur est injectée :", value);
+              // console.log("La valeur est injectée :", value);
             }}
           />
         
